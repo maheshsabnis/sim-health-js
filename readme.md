@@ -9,6 +9,7 @@ HTML
             - check, checkbox
             - button, Button Element
             - month, date, time, week, color, email, tel, etc. (HTML 5 elements) 
+        - All 'input' elements provides 'value' property to read/write data     
     - Collection Types
         - select with option
             - Dropdown List
@@ -89,3 +90,10 @@ HTML
             - STore large Data equal to Memory available for Browser
             - Methods
                 - sort(), reverse(), search(), find(), indexOf(), lastIndexOf(), reduce(), splice(), slice(), shift(), unshift(), map() forEach(), filter() etc.
+
+    - JSON object
+        - A DEfault Singleton object for a current containing Function / Module / JS file
+        - The JSON object can also have functions in it
+        - Properties of JSON object can be accessed in its function using  'this'            
+    - Array iteration
+        - using 'for..loop' or 'for..in' loop

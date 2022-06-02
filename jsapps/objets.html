@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // The JSON Object
+        // JSON.stringify() convert the JSON object into string
+        // JSON object with default properties
+        var emp = {
+            EmpNo:101, EmpName: 'Ajay',
+            display:function(){
+                console.log(this.EmpNo + '  ' + this.EmpName + '  ' + this.DeptName);
+            }
+        }; 
+        emp.display(); // DeptName will be undefined 
+        console.log('Data in emp is = ' + JSON.stringify(emp));
+        // add properties Dynamically into existing JSON object
+        emp.DeptName = 'IT';
+        console.log('Data in emp is = ' + JSON.stringify(emp));
+        // Extract properties using object name
+        console.log(emp.EmpNo + '   ' + emp.EmpName + '  ' + emp.DeptName);
+        emp.EmpNo  = 102; // change in emp
+        console.log(emp.EmpNo + '   ' + emp.EmpName + '  ' + emp.DeptName);
+        emp.display(); // print DeptName because it is added in emp object
+    </script>
+</head>
+<body>
+    <h1>USing Objects</h1>
+
+</body>
+</html>

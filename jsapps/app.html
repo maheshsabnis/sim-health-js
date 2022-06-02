@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var Emps = [];
+            var depts = ['IT', 'HR', 'SL', 'TR'];
+            
+            // generate <option> in <select> dynamically
+                // get reference of lstdname
+            var lstdname = document.getElementById('lstdname');
+            // define a variable that will contain data from array in <option>
+            var option='';    
+            // read each record from depts array
+            for(var i=0;i<depts.length;i++){
+                // <option value="IT">IT</option>
+                option += '<option value="'+ depts[i] +'">' + depts[i] + '</option>'
+            }
+            // add the option in HTML of <select> using int 'innerHTML' property
+            
+                lstdname.innerHTML = option;
+
+
+
+
+
+            // Refer buttons
+            var btnClear = document.getElementById('btnClear');
+            var btnSave = document.getElementById('btnSave');
+
+            // click event for btnClear to clear all entries in text-boxes
+            btnClear.addEventListener('click', function(){
+                document.getElementById('txteno').value = '';
+                document.getElementById('txtename').value = '';
+            },false);
+
+            // click event for 'Save' button to read data from text element 
+            // as well as select to receive employees data asn store in Emps array
+            btnSave.addEventListener('click',function(){
+                var emp = {};
+                // read data from text elements
+                emp.EmpNo =   document.getElementById('txteno').value;
+                emp.EmpName = document.getElementById('txtename').value;
+                emp.DeptName = document.getElementById('lstdname').value;
+
+                // push the record in Emps array
+                Emps.push(emp);
+                // print Emps in dvemp panel
+                document.getElementById('dvemp').innerHTML = JSON.stringify(Emps);
+
+            },false);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>A Small Emp App</h1>
+    <table>
+        <tr>
+            <td>
+                EmpNo
+            </td>
+            <td>
+                <input type="text" id="txteno">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                EmpName
+            </td>
+            <td>
+                <input type="text" id="txtename">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                DeptName
+            </td>
+            <td>
+                <select id="lstdname"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Clear" id="btnClear">
+            </td>
+            <td>
+                <input type="button" value="Save" id="btnSave"/>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <div id="dvemp"></div>
+</body>
+</html>

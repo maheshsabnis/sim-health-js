@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [10,20,30,40,50,60];
+        console.log('Data in ARray = ' + arr);
+        // adding data in array (right-most entry)
+        arr.push(70);
+        console.log('Data in ARray after push = ' + arr);
+        // remove the right-most record from array
+        arr.pop();
+        console.log('Data in ARray after pop = ' + arr);
+        // add data on left-most side
+        arr.unshift(5);
+        console.log('Data in ARray after unshift = ' + arr);
+        // remove the left-most entry
+        arr.shift() ;
+        console.log('Data in ARray after shift = ' + arr);
+        
+        var arr1 = [10,20,50,30,60,40,80,90,70,100,120,130,110];
+        console.log('Data in Arr1 before sort = ' + arr1);
+        // Sort by parsing and not by number
+        arr1.sort();
+        console.log('Data in Arr1 After sort = ' + arr1);
+        // write a function that will accept 2 parameters and return its substraction
+        function compareAscending(a,b){
+            // +, a is greater than b
+            // -, a is smaller than b
+            // 0, both are same
+            return a - b; 
+        }
+
+        // sort by number by passing function as parameter
+        arr1.sort(compareAscending);
+        console.log('Data in Arr1 using number sort Ascending = ' + arr1);
+
+        function compareDescending(a,b){
+            
+            return b - a; 
+        }
+        arr1.sort(compareDescending);
+        console.log('Data in Arr1 using number sort Descending = ' + arr1);
+
+        console.log('Length of arr1 is = ' + arr1.length);
+
+        // use slice to break the array
+        var res = arr1.slice(5,8);
+        console.log('Sliced data res = ' + res);
+        console.log('After Slice arr1 = ' + arr1);
+        // use splice to delete records from array
+        arr1.splice(5,9);
+        console.log('After SPlice arr1 = ' + arr1);
+
+    </script>
+</head>
+<body>
+    <h1>Using JavaScript Arrays</h1>
+</body>
+</html>
