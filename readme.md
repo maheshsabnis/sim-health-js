@@ -25,7 +25,67 @@ HTML
     - INteractive Elements
         - Events Based UI for USer Interaction
          - Button
+    - HTML Element Property System
+        - The 'id', used to identify element uniquely from DOM
+        - The 'name', used to extract collection of DOM elements having 'same name' e.g. Element Collection OR Group
+        - The 'class', used to extract collection of DOM elements having 'same name' e.g. Element Collection OR Group 
 
 # JS Basics
 1. window object
-             
+    - Represents an instance of Browser
+        - Events
+            - onload
+            - onclose
+2. document object
+    - Represents HTML DOM loaded in the browser
+    - USed to access HTML Elements from DOM to perform following operations
+        - Access property of Element for Read/Write Operations
+        - Access Element for attaching Events
+        - Generate HTML Dynamically based on Data 
+    - functions
+        - getElementById('{id}'), extract single element based on 'id'
+        - getElementsByName('{name}'), extract collection of elements
+        - getElementsByClass('{class}'), extract collection of elements   
+        - getElementsByTagName('{tag}'), return collection of elements of all matching tags
+        - querySelector(CONDITION)
+        - addEventListener(), used to attach an event to DOM Element
+            - document.addEventListener('{EVENT-NAME}', function(){LOGIC-TO-EXECUTE}, BOOL-KEEP-EVENT-ATTACHED-TO-ELEMENT)
+                - If true then the Function will always be attached with DOM Element
+                - If false, then once the events raise is complete the function will be detached from Element         
+    - VAriable is declared using 'var'              
+
+# JS Programming (Included in TypeScript)
+- Variable is declared using 'var'
+- There is no explicit Data Type available
+- Data TYpes are Parsed based on 'initial-value-of-variable'
+    - e.g. var i = 10; 
+        - here 'i' is number
+    - Parsed Types
+        - number, string, boolean
+            - number includes 'integer' and 'floating' type values
+            - string using '' or "" both are same
+    - Complex Types with methods
+        - object
+            -  used to store Complex data like JSON data
+                - e.g.
+                    - {KEY:VALUE}
+        - Date
+            - USed to Manage Date Formats on Client-Side based on OS Date-Time settings
+                - UTC Timings
+        - function
+            - Power of JS for Building 'MULTI-MODULE-APP'
+            - Reference Functions
+                - STore the function Implementation into a variable, and use it as a class 
+                    - e.g.
+                        - var obj = function(){......}
+            - CLose Function aka Function Object
+                - CReate a function, that returns an Object which we can use as class
+                    - e.g.
+                        - function MyObject(){...... return { PUBLIC METHODS }}
+            - Immediatly Invokable Function Expression aka IIFE 
+                - also known as 'Self-Executable' JavaScript
+                - Also used to Create 'MODULE' in JavaScript            
+        - Array also represented as '[]'         
+            - STore large Data equal to Memory available for Browser
+            - Methods
+                - sort(), reverse(), search(), find(), indexOf(), lastIndexOf(), reduce(), splice(), slice(), shift(), unshift(), map() forEach(), filter() etc.
