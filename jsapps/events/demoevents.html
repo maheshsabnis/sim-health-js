@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var txtname = document.getElementById('txtname');
+           
+            // the change event
+            // change
+            // blur
+            // keyup
+            txtname.addEventListener('keyup',function(){
+                // to refer the same element's value inside its event
+                // use 'this'
+
+                document.getElementById('dvname').innerText = this.value;
+            },false);
+
+            var depts = ['IT', 'HR', 'SL', 'TR'];
+
+                var lstdname = document.getElementById('lstdname');
+            var option='';    
+            for(var i=0;i<depts.length;i++){
+                // <option value="IT">IT</option>
+                option += '<option value="'+ depts[i] +'">' + depts[i] + '</option>'
+            }
+            // add the option in HTML of <select> using int 'innerHTML' property
+                lstdname.innerHTML = option;
+            // CHange event on lstdname
+              
+            lstdname.addEventListener('change',function(){
+                 document.getElementById('dvdname').innerText = this.value;   
+            },false);
+
+
+            // lets define a omplex ARray on Objects
+            var departments = [
+                {DeptNo:10, DeptName:'Information Technology'},
+                {DeptNo:20, DeptName:'Electronics'},
+                {DeptNo:30, DeptName:'Electrical'},
+                {DeptNo:40, DeptName:'Mechanical'}
+            ];
+
+            // generate list of Departments dynamically
+            var lstdept =  document.getElementById('lstdept');
+             var item='';
+             for(var i=0;i<departments.length;i++){
+                // <option value="10">Information Technology</option> 
+                item += '<option value="'+ departments[i].DeptNo + '">'+ departments[i].DeptName+ '</option>';
+             }
+             lstdept.innerHTML = item;
+
+             lstdept.addEventListener('change',function(){
+                document.getElementById('dvdept').innerText = 'Value = ' + this.value + ' Text = ' + this[this.selectedIndex].text;
+             },false);
+
+            
+        };
+    </script>
+</head>
+<body>
+    <h1>DEMO Events</h1>
+    <div>
+        Enter Name: <br/>
+        <input type="text" id="txtname">
+        <br/>
+        <div id="dvname"></div>
+        <hr/>
+        <select id="lstdname"></select>
+        <hr/>
+        <hr/>
+        <div id="dvdname"></div>
+        <hr/>
+        List of Departments: <br/>
+        <select id="lstdept"></select>
+        <hr/>
+        <hr/>
+        <div id="dvdept"></div>
+
+    </div>
+</body>
+</html>

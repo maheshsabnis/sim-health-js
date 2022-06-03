@@ -123,3 +123,15 @@ HTML
                 - These functions will exposed only when returned
     - use 'parseInt(STRING)', to parse string as number
     - use 'parseFloat(STRIG)', to parse string with decimal point
+3. JS DOM Events for UI
+    - click
+        - mouseenter + mouseleftbuttondown
+    - change
+        - input:text
+            - keydown + keyup
+        - select
+            - mouseleftbuttondown
+    - blur (LOST-FOCUS, press TAB on keyboard)
+        - change event on input:text element for most of the popular browsers            
+    - If using Collection Elements e.g. select, then first retrieve the selectedIndex and then get its text    
+    - selectedIndex, is the selected 'option' index of the select element
