@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--Refer the External JavaScript Here-->
+    
+    <script src="./reffunctions.js"></script>
+    <script src="./extension.js"></script>
+    <!--Call Methods from Externally Referred JavaScript Here-->
+    <script>
+      window.onload = function () {
+        var btnadd = document.getElementById("btnadd");
+        var btnmulti = document.getElementById("btnmulti");
+        var btnpower = document.getElementById("btnpower");
+        var btndiv = document.getElementById("btndiv");
+
+        // define an instance of the Reference-Function which is loaded
+        // using Script Reference
+        var obj = new MyObject();
+        console.log(obj);
+        // subscribe to 'click' events of buttons
+        btnadd.addEventListener('click',function(){
+            var res = obj.add(parseInt (document.getElementById('txtx').value) , parseInt( document.getElementById('txty').value));
+            document.getElementById('txtres').value = res; 
+            
+        },false); 
+        btnmulti.addEventListener('click',function(){
+            var res = obj.multi(parseInt (document.getElementById('txtx').value) , parseInt( document.getElementById('txty').value));
+            document.getElementById('txtres').value = res; 
+        },false); 
+
+        btnpower.addEventListener('click',function(){
+            var res = obj.power(parseInt (document.getElementById('txtx').value) , parseInt( document.getElementById('txty').value));
+            document.getElementById('txtres').value = res; 
+        },false); 
+
+
+        btndiv.addEventListener('click',function(){
+            var res = obj.div(parseInt (document.getElementById('txtx').value) , parseInt( document.getElementById('txty').value));
+            document.getElementById('txtres').value = res; 
+        },false); 
+
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Using JavaScript Reference Functions</h1>
+    <table>
+      <tr>
+        <td>X</td>
+        <td>
+          <input type="text" id="txtx" />
+        </td>
+      </tr>
+      <tr>
+        <td>Y</td>
+        <td>
+          <input type="text" id="txty" />
+        </td>
+      </tr>
+      <tr>
+        <td>Result</td>
+        <td>
+          <input type="text" id="txtres" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="Add" id="btnadd" />
+          <input type="button" value="Multiply" id="btnmulti" />
+          <input type="button" value="Power" id="btnpower" />
+          <input type="button" value="Div" id="btndiv" />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

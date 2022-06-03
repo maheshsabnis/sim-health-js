@@ -97,3 +97,29 @@ HTML
         - Properties of JSON object can be accessed in its function using  'this'            
     - Array iteration
         - using 'for..loop' or 'for..in' loop
+
+# Modular Programming with JS
+1. Object
+    - Schema with
+        - Properties
+            - Represents the metadata for 'DATA' stored ib object
+        - Functions
+            - Logic / operations / behavior for DATA
+    - Every Type in JS is Object
+        - Each Type has Properties and functions with it
+    - Some Popular methods of Object     
+        - Object.create(), create a new object with same schema from Original object 
+        - Object.assign(), Clone an object from original object at new Location
+    - A Property
+        - Object.prototype
+            - USed to extend an existing Object by adding new function in it    
+2. Function objects
+    - Reference Functions
+        - Provides prototype to add an extended functions to an existing object
+    - Close Functions
+    - IIFE    
+        - USe IIFE when the JS has to define 'Modules'  
+            - Module: AN Encapsulated Objects with Private Functions in it
+                - These functions will exposed only when returned
+    - use 'parseInt(STRING)', to parse string as number
+    - use 'parseFloat(STRIG)', to parse string with decimal point

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./closefunction.js"></script>
+    <script>
+        window.onload = function(){
+            var obj = new StringUtilities();
+            console.log(obj);
+            var btngetlength = document.getElementById('btngetlength');
+            var btnreverse = document.getElementById('btnreverse');
+
+            btngetlength.addEventListener('click',function(){
+                
+                var str = document.getElementById('txtinfo').value;
+                var length  = 0;
+                length = obj.getStringLength(str);
+
+                document.getElementById('msgstrong').innerHTML  = " Length of String:" + length;
+            },false);
+            btnreverse.addEventListener('click',function(){
+                var str = document.getElementById('txtinfo').value;
+                document.getElementById('msgreverse').innerText = obj.reverse(str);    
+            },false);
+
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Close Functions</h1>
+    <div>
+        <strong>
+           Enter String here
+        </strong>
+        <div>
+            <textarea id="txtinfo" cols="30" rows="10" ></textarea>
+        </div>
+        <hr/>
+        <input type="button" value="Get Length" id="btngetlength">
+        <input type="button" value="Reverse" id="btnreverse">
+        <hr>
+        <div id="dvlength">
+            <strong id="msgstrong"> </strong> <br/>
+        </div>
+        <hr>
+        <div id="dvreverse">
+            <strong id="msgreverse">
+                 
+            </strong>
+        </div>
+    </div>
+</body>
+</html>
