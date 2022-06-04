@@ -135,3 +135,121 @@ HTML
         - change event on input:text element for most of the popular browsers            
     - If using Collection Elements e.g. select, then first retrieve the selectedIndex and then get its text    
     - selectedIndex, is the selected 'option' index of the select element
+
+# ES 6
+    - Modern Specification for JavaScript for Front-End Development (and also on server-side for Nodejs)    
+        - w3c
+- Specifications
+    - Block Scope for Variable (Say Bye-Bye to var)
+    - Explicit Type System* (Only Supported by TypeScript)
+        - Enhancements in Array and String classes
+    - Object Mutation
+        - SPread the Object with new properties w/o killing or redeclaring it
+            - Known as 'spread'
+            - Strings
+                - Template String
+            - Arrays
+            - JSON objects  
+        - New Collections (Modern JavaScript Only)
+            - Set(), Like HashSet
+            - Map(), Lke Dictionary
+    - Arrow Operator
+        - SImplification of Callback methods
+        - =>
+    - Usig object spread to pass variable number of parameters to a method            
+        - ...
+    - Object Oriented Programming
+        - Class
+        - Generics, interfaces, Access-Specifiers (Only in TypeScript)    
+        - Inheritance
+    - Asynchronous Programming
+        - AJAX, By Microsoft
+        - Ajax, Mozilla    
+        - Promise
+            - async/await (ES 8)
+    - Sequence Generations (ES 7)
+        - Iterators
+        - Generators           
+    - Proxy (ES 7)
+        - Hide Original Object using the Proxy object      
+    - Modules
+        - Creaing Exportable Types so that they can be imported
+- ES 6 Languages
+    - High-Level JavaScript aka Modern JavaScript aka ES 6
+        - USed by React, Vue.js, Ember, Node.js, etc.
+    - TypeScript by Microsoft
+    - Dart
+# TypeScript Specifications          
+
+- Block Scope using 'let' keyword
+- DataTYpes
+    - number, string, boolean, date, object, any
+    - Union Types
+        - DEfine a variable with More-than-One datatype
+        - let x: number|string;
+    - COmplex Type
+        - Array
+            - BAsic Methods: push(), pop(), shift(), unShift(), indexOf(), lastIndexOf(), slice(), splice(), etc
+            - ES 6 Methods
+                - forEach(), map(), filter(), find(), reduce()
+        - String
+            - search        
+- Arrow OPerator Support
+    - forEach((data,index)=>{.....logic.....})
+- SPread Operator for PAssing variable number of parameters to method
+    - function fn1(...data){}  
+- ES 6 COnstants
+    - const
+- OOPs
+    - Keywords
+        - class
+        - interface
+        - extends, used for inheritance
+        - impements, used to implement interface by class
+        - get, set for properties
+        - public, private,
+            - All members of class are public by default
+        - static for methods
+        - abstract*, needs to look for latest TypeScript release along with protected keyword 
+        - namespace
+- Modules
+    - export, to export array, function, class from file1
+    - import, to imports exportable types from fil1 to file2           
+
+- Transpilation
+    - File.ts -----> TypeScript Compiler ------> Transform to JavaScript ------> File.js ------ Load in Browser for Execution
+
+- Installing Transpiler
+    - Download and Install Node.js
+        - https://www.nodejs.org
+            - THis will install 'npm' utility
+    - Machine MUST have access to 
+        - https://www.npmjs.com
+            - Used for downloading all packages        
+    - TypeScript
+        - npm install -g typescript
+            - install TypeScript for MAchine Scope (Global)
+            - This will install 'tsc', the TypeScript Compiler on machine
+                - tsc.bat
+
+    - Application COnfiguration
+        - Using 'package.json' file
+            - Each ES 6 app (TypeScript, ES6) is a package
+            - Each Package has dependencies (Runtime or DevTime/TestTime or both)    
+            - ALl Packages needed by the current application MUST be specified in package.json
+        - create package.json using the following command
+            - npm init -y OR npm init -f
+        - Important sections of package.josn
+            - 'scripts'
+                - contains all commands to build, test, run application
+            - 'devDependencies'
+                - contains list of all packages require during development and testing of application                    
+                    - npm install --save-dev [PACKAGE-NAME]
+            - 'dependencies'
+                - Contains list of packages required to run/execute the application
+                    - npm install --save [PACKAGE-NAME]
+        - The 'npm install' command will add 'node_modules' folder in the current application     
+- Command for Transpilation
+    - tsc [SOURCE-FILE].ts
+    - This will generate
+        - [SOURCE-FILE].js           
