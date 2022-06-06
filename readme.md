@@ -177,6 +177,7 @@ HTML
 - ES 6 Languages
     - High-Level JavaScript aka Modern JavaScript aka ES 6
         - USed by React, Vue.js, Ember, Node.js, etc.
+            - Babel Transpiler
     - TypeScript by Microsoft
     - Dart
 # TypeScript Specifications          
@@ -192,6 +193,12 @@ HTML
             - BAsic Methods: push(), pop(), shift(), unShift(), indexOf(), lastIndexOf(), slice(), splice(), etc
             - ES 6 Methods
                 - forEach(), map(), filter(), find(), reduce()
+                - Iterations on Array using for..of loop
+                - forEach(): Iterate and print elements / records from array. This metod does not return any value
+                - map(),Iterate and can modify values from array based on condition, provided conditions satisfy, this return array with same length, but will have undefined values in output array for which the input array values does not satisfy condition
+                - filter(), return an output array based on condition match on original array
+                - find(): Return the first match     
+
         - String
             - search        
 - Arrow OPerator Support
@@ -203,8 +210,11 @@ HTML
 - OOPs
     - Keywords
         - class
+            - The 'constructor()' is a standard method
+            - The  'constructor()' can directly declare data members those can be public, private.
         - interface
         - extends, used for inheritance
+            
         - impements, used to implement interface by class
         - get, set for properties
         - public, private,
