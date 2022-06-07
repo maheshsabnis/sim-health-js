@@ -126,3 +126,60 @@
     - USe @Pipe() decorator from @angular/core on class to create custom pipe              
 - Dependency Injection  
     - A COntainer to register all Services                         
+
+# ANgular Project STructure
+
+1. package.json
+    - List of packages used for Development, Testing as well as Runtime
+    - section
+        - devDependencies
+            - COntains LIst of all packages required during development and testing
+        - dependencies
+            - Contains List of packages used for Execution (used for development too)   
+            - External Dependencies     
+                - tslib
+                    - TypeSripct language Quality check and optimization during build
+                    - Also uses Polyfills to make sure that the Generated JavaScript from TypeScript is executed in brower
+                - zone.js
+                    - USed by polyfilles to handle and Log browser errors
+                - rxjs
+                    - Reactive JavaScript Extensions
+                    - USed when ANgular App makes external HTTP calls to REST API
+                    - This library provides object to maintain Received Response fro REST API
+        - scripts
+            - define commands to build/test/run the application
+```` javascript
+ "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+````
+
+    - ng serve will be 'npm run start'
+        - The 'npm' will look for package.json on the path where the command is invoked 
+        - The 'npm run' will check the 'scripts' block in package.json
+        - The 'npm run start' will check whether the 'start' key is present in 'script' block, if present then invoke and execute 'value of start' as a command
+            - in our case 'npm run start' will invoke 'ng serve' and execute it 
+
+2. tsconfig.json
+    - tsconfig.ap.json
+    - tsconfig.spec.json
+3. angular.json
+    - Application Configuration File for the Project 
+4. src folder
+5. node_modules folder
+    - This folder will be created with 'npm install --save' commands, and this will contains folder having dependency files in it
+
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   2.02 MB | --> The Standard Angular Package Transpilation
+polyfills.js          | polyfills     | 313.40 kB | --> Browser Compatibility and Error Handling
+styles.css, styles.js | styles        | 207.32 kB | --> CSS into JS Objects 
+main.js               | main          |  50.45 kB | --> Application Code By developer
+runtime.js            | runtime       |   6.52 kB | -->Foundation WebPack file that will load the angular app in browser
+
+                      | Initial Total |   2.58 MB    
+- To USe a class, method, interface from a angular pakage in .ts file import them using 'import' keyword
+    - import {EXPORTED-CLASS|METHOD|INTERFACE | CONSTANT} from 'PACKAGE-NAME';                      
