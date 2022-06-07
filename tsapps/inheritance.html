@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./inheritance.js"></script>
+    <script>
+          // Using DErive class instance
+        // ACcess the BAse class COnstructor
+        let obj5 = new ClsDerive('First Patameter', 'Info Parameter', 'Value Parameter');
+
+        obj5.display(); // DErive class MEthod
+        obj5.showInfo(); // Base Class Method
+        console.log(`Change Case Lower = ${obj5.changeCase('l')}`);
+        console.log(`Change Case Upper = ${obj5.changeCase('u')}`);
+        obj5.protectedMethod();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

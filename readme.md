@@ -205,16 +205,27 @@ HTML
     - forEach((data,index)=>{.....logic.....})
 - SPread Operator for PAssing variable number of parameters to method
     - function fn1(...data){}  
+    - THis is also used to pass variable number of parameters to a method
+- Union Types (Only in TypeScript)
+    - DEfine a veariable using multiple Data Types    
 - ES 6 COnstants
     - const
+- Object class
+    - Object.assign()
+    - Object.keys(obj)
+        - THe 'obj' is an instale of class or can be JSON object of which public property names can be read     
+    - Object.values(obj), return value of each public property of obj     
 - OOPs
     - Keywords
         - class
             - The 'constructor()' is a standard method
             - The  'constructor()' can directly declare data members those can be public, private.
         - interface
-        - extends, used for inheritance
-            
+        - 'extends', keyword used for inheritance
+              -   The derive class has an access of all public and protected members of the base class
+              - The DErive class instace by default access base class ctor, so derived class instance by default pass parameters to base class ctor.
+              - But if derive class defines an explicit ctor then it MUST call base class ctor using 'super()' call
+              - If base class ctor accepts parameters, then derive class MUST pass these parameter values using super() call  
         - impements, used to implement interface by class
         - get, set for properties
         - public, private,
@@ -222,6 +233,12 @@ HTML
         - static for methods
         - abstract*, needs to look for latest TypeScript release along with protected keyword 
         - namespace
+- Generics
+    - Only SUpported in TYpeScript
+        - Generic Class
+        - Interface
+        - Method
+    - Array<T> is a standard complex type for TYpeScript            
 - Modules
     - export, to export array, function, class from file1
     - import, to imports exportable types from fil1 to file2           
