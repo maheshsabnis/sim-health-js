@@ -23,3 +23,29 @@
   Name : <input type="text" [(ngModel)]="name">
   <br/>
 </div>
+<br/>
+<div>
+  <strong>
+    Selected Character: {{selectedCharacter}}
+  </strong>
+  <br/>
+  Select Character From Here <br/>
+  <select [(ngModel)]="selectedCharacter">
+    <!--Iterate over the characters array to generate option-->
+     <option *ngFor="let c of characters" value="{{c}}">{{c}}</option>
+  </select>
+</div>
+<hr/>
+<div>
+  <strong>
+    Selected Items = {{selectedItem}}
+  </strong>
+  <br/>
+  Select Item <br/>
+  <select [(ngModel)]="selectedItem">
+    <option *ngFor="let item of items" value="{{item.id}}">{{item.name}}</option>
+  </select>
+  <!--Same Name for Radio Button will create a Group and then only one can be selected-->
+  <input type="radio" name="r" id=""> One
+  <input type="radio" name="r" id=""> Two
+</div>

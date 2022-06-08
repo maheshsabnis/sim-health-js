@@ -232,7 +232,25 @@ runtime.js            | runtime       |   6.52 kB | -->Foundation WebPack file t
 ````             
     - The 'name' is public property of the component
     - To use 'ngModel', the Angular Module (AppMdule), MUST import 'FormsModule' from @angular/forms and import is in 'imports' array of the @NgModule  
-- Creating Directives
+    - Execution of ngModel
+        - ngModel will listen to the default event of the HTML element on which it is applied
+            - e.g. if ngModel is applied on input:text element, then the default event is 'change' same for select element
+        - ngModel will invoke its 'ngModelChanged' event behind the scene and will  read the value entered / selected for the element   
+            - e.g. for input:text its value entered in text element and for select element the value of the selected option
+        - the  ngModelChanged will invoke 'ngOnChanges' event of the Component class and the latest value for the HTML element will be passed to the property that is bind to the HTML element using ngModel  
+        - Component will accept the updated value for the property, then this property will be manipulated (based on logic)
+        - The Updated value of the property will be send bak to UI and the UI (HTML Elements) will be updated with the latest value of the property  
+
+
+
+- USing Directives
+    - THey are objects used for 
+        - Defining custom behavior to HTML Element, Attribute Directives
+            - [(ngModel)], [formGroup], formControlName, [value], [href]
+        - Making a Component as a Custom Element, Component Directive
+        - Generating DOM Dynamically based on Data, Structural Directives
+            - *ngFor
+            - *ngIf
 - Communication Across Components
 - Working with Angular Reactive Forms
 - Using Angular Services
