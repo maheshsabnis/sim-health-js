@@ -222,6 +222,16 @@ runtime.js            | runtime       |   6.52 kB | -->Foundation WebPack file t
     - The 'method1()' is pubic method of the component class
         - EVent Binding is  from UI to Component
         - If the method which is executed because of event binding is updating any public property of the component and if this property in bound with UI Element then that UI elements will be updated with new value of property    
+    - Two-Way Binding
+        - COmbination of Property BInding + Event Binding
+        - It is possible using 'ngModel', it is a directive provided in 'FormsModule' from @angular/forms    
+            - [(ngModel)]="PUBLIC-PROPERTY-OF-COMPONENT"
+            - THis directive is applied on editable HTML Elements e.g. input:text, input:checkbox, input:radio, select
+```` html
+  <input type="text" [(ngModel)]="name">
+````             
+    - The 'name' is public property of the component
+    - To use 'ngModel', the Angular Module (AppMdule), MUST import 'FormsModule' from @angular/forms and import is in 'imports' array of the @NgModule  
 - Creating Directives
 - Communication Across Components
 - Working with Angular Reactive Forms
