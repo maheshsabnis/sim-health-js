@@ -1,0 +1,15 @@
+<h2>The Simple Component</h2>
+<div>
+  <!--Expression Binding aka Template Binding-->
+  <strong>{{message}}</strong>
+  <br/>
+  <strong>{{10+20}}</strong>
+</div>
+<br/>
+<!--Property Binding-->
+<input type="text" [value]="message">
+<br/>
+<a [href]="url">Mahesh Sabnis's Blog</a>
+<br/>
+<!--The Event Binding-->
+<input type="button" value="Click Me" (click)="display()">

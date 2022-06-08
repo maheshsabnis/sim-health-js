@@ -183,3 +183,50 @@ runtime.js            | runtime       |   6.52 kB | -->Foundation WebPack file t
                       | Initial Total |   2.58 MB    
 - To USe a class, method, interface from a angular pakage in .ts file import them using 'import' keyword
     - import {EXPORTED-CLASS|METHOD|INTERFACE | CONSTANT} from 'PACKAGE-NAME';                      
+
+# Programming With Angular
+- Create Component
+    - Class Applied with @Component() decorator
+    - Autonomous CLass with
+        - UI
+        - Data
+        - Behavior 
+- Work with Data Binding
+    - Property Binding
+        - Public Member of the COmponent class is Bind with HTML Element
+            - Expression Binding aka Template Binding
+                - Bind Public Property of component with Readonly HTL Elements using {{}} expression 
+                    - Syntax
+                        - {{PROPERTY-NAME}}
+                        - This is readonly binding, UI cannot change the value, changes made in component will be updated to UI
+                        - If PROPERTY-NAME is numeric expression then Angular will invoke eval() function internally and evaluate the math expression.
+        - Used to bind the public property to the Editable attributes of HTML elements
+            - input type="text" value
+                - The 'value' is editable property
+```` html
+    <input type="text" [value]="PUBLIC-PROPERTY">
+    e.g.
+    <input type="text" [value]="Message">
+````
+    - The editable attribute is used in Square Bracket 
+        - The 'Message' will be the PUBLIC property from Component class
+        - Property Binding will not be able to update value from UI, but updated value from Component for the property will be updated in UI 
+        - [value], [href], [disabled], [readonly], [checked], [hidden], ete.
+    - Event Binding
+        - The Event will be raised on HTML elements and the pubic method of the component class will be invoked and executed
+        - Syntax
+            - (EVENT-NAME)="PUBLIC-METHOD()"
+```` html
+    <input type="button" (click)="method1()">
+````
+    - The 'method1()' is pubic method of the component class
+        - EVent Binding is  from UI to Component
+        - If the method which is executed because of event binding is updating any public property of the component and if this property in bound with UI Element then that UI elements will be updated with new value of property    
+- Creating Directives
+- Communication Across Components
+- Working with Angular Reactive Forms
+- Using Angular Services
+- Using Pipes
+- Single Page App (SPA) in Angular using Routing
+- Testing Angular
+- BUild and creating Library Package 
