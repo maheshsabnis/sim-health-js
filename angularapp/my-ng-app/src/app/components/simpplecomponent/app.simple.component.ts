@@ -13,6 +13,7 @@ export class SimpleComponent {
   selectedCharacter:string;
   items:Array<any>;
   selectedItem:any;
+  isShow:boolean;
 
   constructor(){
     this.name = '';
@@ -31,10 +32,16 @@ export class SimpleComponent {
     this.items.push({id:3,name:'RAM'});
     this.items.push({id:4,name:'Router'});
     this.selectedItem = {id:0, name:''};
+    this.isShow = true;
   }
    display():void {
      alert('Method is called');
      // Update the Public Property
      this.message = 'Update after click';
+   }
+   toggle():void {
+     this.isShow = !this.isShow;
+    // if(this.isShow) this.isShow = false;
+    // else this.isShow = true;
    }
 }

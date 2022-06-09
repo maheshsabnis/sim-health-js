@@ -251,7 +251,16 @@ runtime.js            | runtime       |   6.52 kB | -->Foundation WebPack file t
         - Generating DOM Dynamically based on Data, Structural Directives
             - *ngFor
             - *ngIf
+- Points to be taken into COnsideration while Creating Components in Angular
+    - If Same HTML UI elements is repetating in HTML Template with different data, then consider creating a 'Re-Usable' component
+    - Try to avoid hard-coding for dynamically generating UI Elements 
+    - (Very Important)
+        - If the Component is performing HEavy-Load or time-consuming operations (e.g. Call to External Services, processing large array, etc. ) then if these operations are to be performed while component loading, then instead of writing this code in Constructor, let the component class implement 'OnInit' interface from @angular/core and implements its 'ngOnInit()' method and write the Heavy-Logic in this method. 
+            - The 'ngOnInit()' methdo will be auto-invoked 'once' after the constructor is executed            
 - Communication Across Components
+    - Required in Re-Usable Components
+    - Plan for UI fo Re-usability
+    - Plan for @Input() properties as well as @Output() EVetEmitter<T> 
 - Working with Angular Reactive Forms
 - Using Angular Services
 - Using Pipes

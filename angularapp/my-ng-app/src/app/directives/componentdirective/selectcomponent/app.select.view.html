@@ -1,0 +1,8 @@
+<div class="container">
+  <!--When an option is selected, its selected value will be assigned to
+    BindProperty and the BindProperty is passed to emitData() method
+  -->
+  <select class="form-control" [(ngModel)]="BindProperty" (change)="emitData(BindProperty)">
+    <option *ngFor="let val of DataSource" value="{{val}}">{{val}}</option>
+  </select>
+</div>

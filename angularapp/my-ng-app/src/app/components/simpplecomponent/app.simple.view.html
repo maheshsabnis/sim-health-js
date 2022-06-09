@@ -49,3 +49,18 @@
   <input type="radio" name="r" id=""> One
   <input type="radio" name="r" id=""> Two
 </div>
+<br/>
+Using *ngIf
+<br/>
+<button (click)="toggle()">Toggle</button>
+<!--Using ngIf directive, if isSHow is true then div will be added in DOM else it will
+be removed from DOM-->
+<div *ngIf="isShow">
+   <strong>This Text will be displayed if the condition is true</strong>
+</div>
+<br/>
+<!--USing [hidden] Attribute Directive aka PROPERTY-BINDING-->
+<div [hidden]="isShow">
+  <strong>This Text will be displayed if the [hidden] is false</strong>
+</div>
+<br/>
