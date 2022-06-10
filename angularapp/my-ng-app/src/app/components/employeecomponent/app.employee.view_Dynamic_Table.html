@@ -58,17 +58,26 @@
       </tr>
     </tbody>
   </table> -->
-
+  <!--Dynamically Generated Table-->
+  <h6>Dynamicay Generated Table</h6>
   <input type="radio" name="r" (click)="sortArr()"> Sort By EmpName
   <input type="radio" name="r" (click)="reverseArr()"> Reverse By EmpName
-  <h6>Using Reusable Table Component</h6>
-   <app-datagrid-component
-    [DataSource]="employees" [CanDelete]="true"
-    (selectRow)="getRowForDelete($event)"
-   ></app-datagrid-component>
-   <hr/>
-   <h6>List of Departments</h6>
-   <app-datagrid-component
-   [DataSource]="depts"
-  ></app-datagrid-component>
+  <table  class="table table-bordered table-striped table-dark">
+    <thead>
+      <!--Generate Headers Dynamically-->
+      <tr>
+        <th *ngFor="let header of tableColumns">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees" (click)="getSelectedEmployee(emp)">
+        <td *ngFor="let header of tableColumns">
+           {{emp[header]}}
+        </td>
+        <td>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

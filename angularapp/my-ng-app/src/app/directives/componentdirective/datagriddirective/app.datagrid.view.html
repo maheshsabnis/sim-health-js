@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <!--Generate Headers-->
+    <tr>
+      <th *ngFor="let header of columnHeaders">{{header}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of DataSource" >
+      <td *ngFor="let header of columnHeaders">
+        {{record[header]}}
+      </td>
+      <td *ngIf="CanDelete">
+        <button class="bn btn-danger" (click)="onSelectRow(record)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

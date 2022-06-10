@@ -262,6 +262,53 @@ runtime.js            | runtime       |   6.52 kB | -->Foundation WebPack file t
     - Plan for UI fo Re-usability
     - Plan for @Input() properties as well as @Output() EVetEmitter<T> 
 - Working with Angular Reactive Forms
+    - Template Forms
+        - Form Tag and data is bind using [(ngModel)]
+    - Reactive Forms
+    - @angular/forms
+        - ReactiveFormsModule
+            - Platform to execute the Reactive-Forms in Angular
+            - THis MUST be imported in 'imports' array of @NgModule
+        - FormGroup
+            - CLass that represents the form tag
+            - [formGroup], a attribute directive applied on form tag
+            - The 'value' property used to read the data entered in all editable elements of the form
+            - The 'SetValues()' a method to assign value to Form tag    
+        - FormControl
+            - Each Editable ELement under the FormGroup    
+            - This is mapped with the public property of the Model class
+             - The 'value' property used to read the data entered in all editable elements of the form
+            - The 'SetValues()' a method to assign value to Form tag   
+        - AbstractControl, an abstract base class for FormGroup and FormControl
+        - Validators
+            - class contains static methods for validations
+                - require(AbstractControl), requireTrue(AbstractControl)
+                - pattern(string|RegEx)
+                - minLength(number) , maxLength(number)
+                - email(AbstractControl)
+                - requiredNull(AbstractControl)     
+                - compose([ARRAY-OF-VALIDATOR-METHODS]) , composeAsync([ARRAY-OF-VALIDATOR-METHODS])    
+                - If a method accepts 'AbstractControl' as input parameter, then the explicit parameter need not to pass to this method, instead the value will be read based on the control on which this validation method is applied 
+        - Defining Validations
+            - They are applied on Model class using Validators and FormControl classes
+        - Applying Validations on UI
+            - [formGroup].controls[formControlName].errors[VALIDATION-RULE]
+                - [formGroup]: An instance of FormGroup class that is bind with form tag using [formGroup] attribute directive
+                - [formControlName]: The Key, that map the FormControl class instance with the public property of the Model class and the UI element with which the public property is bind.   
+                    - UI -->FormControlName-->FormControl Instance --> Public Property of Model class
+                -[VALIDATION-RULE]: The type of validation applied on public property of the Model class using Validators class 
+            - Execution aka Evaluation of validations
+                - Check if the UI element is changed (aka dirtyfied)   
+                    - [formGroup].controls[formControlName].dirty
+                - Check if the value is valid / invalid
+                    - [formGroup].controls[formControlName].valid
+                    - [formGroup].controls[formControlName].invalid     
+                    - ![formGroup].controls[formControlName].valid  
+        - Create Custom VAlidator
+            - The class that contains static method with input parameter as 'AbstractControl', this method returns 'any'
+                - If the value is valid, the method will return null
+                - If the value is invalid, then the method will return JSON as follows
+                    - {invalid:true} / {valid:false}           
 - Using Angular Services
 - Using Pipes
 - Single Page App (SPA) in Angular using Routing

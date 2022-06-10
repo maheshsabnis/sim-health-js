@@ -3,6 +3,8 @@
     BindProperty and the BindProperty is passed to emitData() method
   -->
   <select class="form-control" [(ngModel)]="BindProperty" (change)="emitData(BindProperty)">
-    <option *ngFor="let val of DataSource" value="{{val}}">{{val}}</option>
+    <option *ngFor="let val of DataSource" value="{{val}}">
+        {{val}}
+    </option>
   </select>
 </div>

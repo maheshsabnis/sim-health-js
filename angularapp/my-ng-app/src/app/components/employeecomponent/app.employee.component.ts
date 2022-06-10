@@ -11,6 +11,8 @@ export class EmployeeComponent implements OnInit{
   employee: Employee;
   employees:Array<Employee>;
   private logic: EmployeeLogic;
+  depts:Array<any>;
+
 
   tableColumns:Array<string>;
 
@@ -23,6 +25,11 @@ export class EmployeeComponent implements OnInit{
     this.employees = new Array<Employee>();
     this.logic = new EmployeeLogic();
     this.tableColumns = new Array<string>();
+    this.depts = new Array<any>();
+    this.depts.push({DeptNo:10, DeptName:'IT'});
+    this.depts.push({DeptNo:20, DeptName:'HR'});
+    this.depts.push({DeptNo:30, DeptName:'SL'});
+    this.depts.push({DeptNo:40, DeptName:'AC'});
 
   }
   // invoked after the constructor completes its execution
@@ -53,6 +60,28 @@ export class EmployeeComponent implements OnInit{
   getDesignation(event:any):void {
     console.log(`Designation ${event}`);
     this.employee.Designation = event;
+  }
+
+  sortArr():void {
+    this.employees.sort(this.compare);
+    console.log(JSON.stringify(this.employees));
+
+  }
+
+  private compare(a:Employee,b:Employee):number {
+      if (a.EmpName < b.EmpName) return -1;
+      if (a.EmpName > b.EmpName) return 1;
+      return 0;
+  }
+
+  reverseArr():void {
+    this.employees.reverse();
+    console.log(JSON.stringify(this.employees));
+  }
+
+  getRowForDelete(event:any):void {
+    console.log(`Record Received for Delete ${JSON.stringify(event)}`);
+
   }
 
 }
