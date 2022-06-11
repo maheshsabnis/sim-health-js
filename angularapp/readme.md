@@ -308,7 +308,9 @@ runtime.js            | runtime       |   6.52 kB | -->Foundation WebPack file t
             - The class that contains static method with input parameter as 'AbstractControl', this method returns 'any'
                 - If the value is valid, the method will return null
                 - If the value is invalid, then the method will return JSON as follows
-                    - {invalid:true} / {valid:false}           
+                    - {invalid:true} / {valid:false}    
+- Creating Custom Diretives
+    - MAke sure that the Custom Directive class is declared in 'declarations' array of NgModule                          
 - Using Angular Services
 - Using Pipes
 - Single Page App (SPA) in Angular using Routing

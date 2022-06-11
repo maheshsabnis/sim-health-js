@@ -9,6 +9,7 @@ export class DataGridComponent implements OnInit {
   private _DataSource:Array<any>;
   columnHeaders:Array<string>;
   private _CanDelete:boolean;
+  private _Color:string;
   @Output()
   selectRow:EventEmitter<any>;
   constructor() {
@@ -16,6 +17,7 @@ export class DataGridComponent implements OnInit {
     this.columnHeaders = new Array<string>();
     this._CanDelete = false;
     this.selectRow = new EventEmitter<any>();
+    this._Color = '';
    }
 
   ngOnInit() { }
@@ -40,6 +42,14 @@ export class DataGridComponent implements OnInit {
   }
   get CanDelete():boolean {
     return this._CanDelete;
+  }
+
+  @Input()
+  set Color(val:string){
+    this._Color = val;
+  }
+  get Color():string {
+    return this._Color;
   }
 
   onSelectRow(rec:any):void {

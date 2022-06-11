@@ -19,6 +19,7 @@ export class EmployeeComponent implements OnInit{
   // Assign the COnstants to local public properties of the component
   departments = Departments;
   designations = Designations;
+  passColor:string;
   constructor(){
     console.log('COnstructor is called');
     this.employee = new Employee(0,'','','',0);
@@ -30,6 +31,7 @@ export class EmployeeComponent implements OnInit{
     this.depts.push({DeptNo:20, DeptName:'HR'});
     this.depts.push({DeptNo:30, DeptName:'SL'});
     this.depts.push({DeptNo:40, DeptName:'AC'});
+    this.passColor = '';
 
   }
   // invoked after the constructor completes its execution

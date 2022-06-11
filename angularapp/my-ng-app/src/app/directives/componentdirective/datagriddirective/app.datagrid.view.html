@@ -6,7 +6,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let record of DataSource" >
+    <tr *ngFor="let record of DataSource" [setColor]="Color" >
       <td *ngFor="let header of columnHeaders">
         {{record[header]}}
       </td>
