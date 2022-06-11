@@ -10,13 +10,15 @@ import { SelectComponent } from './directives/componentdirective/selectcomponent
 import {DataGridComponent} from './directives/componentdirective/datagriddirective/app.datagrid.componnt';
 import {EmployeeReactiveFormComponent} from './components/employeereactiveformcomponent/app.employeereactiveform.component';
 import {ColorDirective} from './directives/attibutedirectives/app.color.diretive';
+import {CategorySenderComponent} from './components/communication/categorysendercomponent/app.categorysender.component';
+import { ProductReceiverComponent } from './components/communication/productreceivercomponent/app.productreceiver.component';
 // NgModule Decorator, makes the AppModule class as Angular Module
 @NgModule({
   // Used to instantiate the Developer DEfined Components and Directives
   declarations: [
     AppComponent, SimpleComponent, EmployeeComponent,DataGridComponent,
      SelectComponent, EmployeeReactiveFormComponent,
-     ColorDirective
+     ColorDirective,CategorySenderComponent, ProductReceiverComponent
   ],
   // Used to import standard Angular Modules and external developer defined Angular module
   imports: [
@@ -26,7 +28,7 @@ import {ColorDirective} from './directives/attibutedirectives/app.color.diretive
   providers: [],
   // This component is loaded in Browser
   // by BrowserModule and will be rendered
-  bootstrap: [EmployeeComponent]
+  bootstrap: [CategorySenderComponent, ProductReceiverComponent]
 })
 export class AppModule { }
 // since the AppModule is exported, it can be imported

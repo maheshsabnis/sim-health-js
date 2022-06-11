@@ -1,0 +1,16 @@
+<h2>Category Sender</h2>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Category Id</th>
+      <th>Category Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of categories"
+     (click)="onRowClick(cat)">
+      <td>{{cat.CategoryId}}</td>
+      <td>{{cat.CategoryName}}</td>
+    </tr>
+  </tbody>
+</table>
