@@ -1,0 +1,41 @@
+<h1>Assignment</h1>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>
+      Select DeptName:
+    </td>
+    <td>
+      <select class="form-control"  [(ngModel)]="selDname">
+        <option *ngFor="let d of depts" value="{{d.DeptName}}"
+        >{{d.DeptName}}</option>
+      </select>
+      <strong>{{selDname}}</strong>
+    </td>
+    <td>
+      Select Location:
+    </td>
+    <td>
+    <select class="form-control" [(ngModel)]="selLocation">
+        <option *ngFor="let d of depts" value="{{d.Location}">{{d.Location}}</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<hr/>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>EmpNo</th>
+      <th>EmpName</th>
+      <th>DeptNo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of FilteredEmps">
+      <td>{{e.EmpNo}}</td>
+      <td>{{e.EmpName}}</td>
+      <td>{{e.DeptNo}}</td>
+    </tr>
+  </tbody>
+</table>
