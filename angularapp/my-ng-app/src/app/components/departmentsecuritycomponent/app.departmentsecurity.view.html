@@ -1,0 +1,56 @@
+<h2>Department Secure Call to REST API USing JWT </h2>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <td>
+          <input type="button" value="Register User" class="btn btn-primary"
+           (click)="register()">
+        </td>
+        <td>
+          <input type="button" value="Login User" class="btn btn-warning"
+          (click)="login()">
+        </td>
+        <td>
+          <input type="button" value="Logout" class="btn btn-danger"
+          (click)="logout()">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-control">
+    <label for="">DeptNo</label>
+    <input type="text" class="form-control" [(ngModel)]="dept.DeptNo"
+     (change)="getDeptDetails(dept.DeptNo)">
+  </div>
+  <div class="form-control">
+    <label for="">DeptName</label>
+    <input type="text" class="form-control" [(ngModel)]="dept.DeptName">
+  </div>
+  <div class="form-control">
+    <label for="">Location</label>
+    <input type="text" class="form-control" [(ngModel)]="dept.Location">
+  </div>
+  <div class="form-control">
+    <label for="">Capacity</label>
+    <input type="text" class="form-control" [(ngModel)]="dept.Capacity">
+  </div>
+  <div class="form-control">
+    <input type="button" value="Get Data" class="btn btn-danger"
+    (click)="loadData()">
+    <input type="button" value="Clear" class="btn btn-primary"
+     (click)="clear()">
+    <input type="button" value="Save" class="btn btn-success"
+     (click)="save()">
+     <input type="button" value="Update" class="btn btn-warning"
+      (click)="update()">
+    <input type="button" value="Delete" class="btn btn-danger"
+     (click)="delete()">
+  </div>
+</div>
+<hr/>
+<div class="container">
+  {{message}}
+</div>
+<hr/>
+<app-datagrid-component [DataSource]="depts"></app-datagrid-component>

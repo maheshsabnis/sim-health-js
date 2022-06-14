@@ -14,6 +14,7 @@ import {CategorySenderComponent} from './components/communication/categorysender
 import { ProductReceiverComponent } from './components/communication/productreceivercomponent/app.productreceiver.component';
 import { AssignmentComponent } from './components/assignment/app.assignment.component';
 import {DepartmentComponent} from './components/departmentcomponent/app.department.component';
+import { DepartmentSecurityComponent } from './components/departmentsecuritycomponent/app.departmentsecurity.component';
 // NgModule Decorator, makes the AppModule class as Angular Module
 @NgModule({
   // Used to instantiate the Developer DEfined Components and Directives
@@ -22,7 +23,8 @@ import {DepartmentComponent} from './components/departmentcomponent/app.departme
      SelectComponent, EmployeeReactiveFormComponent,
      ColorDirective,CategorySenderComponent,
       ProductReceiverComponent,
-      AssignmentComponent, DepartmentComponent
+      AssignmentComponent, DepartmentComponent,
+      DepartmentSecurityComponent
   ],
   // Used to import standard Angular Modules and external developer defined Angular module
   imports: [
@@ -32,7 +34,7 @@ import {DepartmentComponent} from './components/departmentcomponent/app.departme
   providers: [],
   // This component is loaded in Browser
   // by BrowserModule and will be rendered
-  bootstrap: [DepartmentComponent]
+  bootstrap: [DepartmentSecurityComponent]
 })
 export class AppModule { }
 // since the AppModule is exported, it can be imported
