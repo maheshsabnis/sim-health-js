@@ -10,6 +10,9 @@
       <td *ngFor="let header of columnHeaders">
         {{record[header]}}
       </td>
+      <td *ngIf="CanEdit">
+        <button class="bn btn-warning" (click)="onSelectRowForEdit(record)">Edit</button>
+      </td>
       <td *ngIf="CanDelete">
         <button class="bn btn-danger" (click)="onSelectRow(record)">Delete</button>
       </td>

@@ -15,6 +15,10 @@ import { ProductReceiverComponent } from './components/communication/productrece
 import { AssignmentComponent } from './components/assignment/app.assignment.component';
 import {DepartmentComponent} from './components/departmentcomponent/app.department.component';
 import { DepartmentSecurityComponent } from './components/departmentsecuritycomponent/app.departmentsecurity.component';
+import { DeptCreteComponent } from './components/routingapp/app.deptcreate.component';
+import { DeptEditComponent } from './components/routingapp/app.deptedit.component';
+import { DeptListComponent } from './components/routingapp/app.deptlist.component';
+import { MainRoutingComponent } from './components/routingapp/app.mainrouting.component';
 // NgModule Decorator, makes the AppModule class as Angular Module
 @NgModule({
   // Used to instantiate the Developer DEfined Components and Directives
@@ -24,17 +28,21 @@ import { DepartmentSecurityComponent } from './components/departmentsecuritycomp
      ColorDirective,CategorySenderComponent,
       ProductReceiverComponent,
       AssignmentComponent, DepartmentComponent,
-      DepartmentSecurityComponent
+      DepartmentSecurityComponent,
+      DeptCreteComponent, DeptEditComponent, DeptListComponent,
+      MainRoutingComponent
   ],
   // Used to import standard Angular Modules and external developer defined Angular module
   imports: [
     BrowserModule, FormsModule,ReactiveFormsModule,
+    // AppRoutingModule: is imported =, hence the RouterModule with route table
+    // is also loaded on the root of the current Angular Application
     AppRoutingModule,HttpClientModule
   ],
   providers: [],
   // This component is loaded in Browser
   // by BrowserModule and will be rendered
-  bootstrap: [DepartmentSecurityComponent]
+  bootstrap: [MainRoutingComponent]
 })
 export class AppModule { }
 // since the AppModule is exported, it can be imported

@@ -9,14 +9,19 @@ export class DataGridComponent implements OnInit {
   private _DataSource:Array<any>;
   columnHeaders:Array<string>;
   private _CanDelete:boolean;
+  private _CanEdit:boolean;
   private _Color:string;
   @Output()
   selectRow:EventEmitter<any>;
+  @Output()
+  selectRowForEdit:EventEmitter<any>;
   constructor() {
     this._DataSource = new Array<any>();
     this.columnHeaders = new Array<string>();
     this._CanDelete = false;
+    this._CanEdit = false;
     this.selectRow = new EventEmitter<any>();
+    this.selectRowForEdit = new EventEmitter<any>();
     this._Color = '';
    }
 
@@ -45,6 +50,14 @@ export class DataGridComponent implements OnInit {
   }
 
   @Input()
+  set CanEdit(val:boolean){
+    this._CanEdit = true;
+  }
+  get CanEdit():boolean {
+    return this._CanEdit;
+  }
+
+  @Input()
   set Color(val:string){
     this._Color = val;
   }
@@ -54,5 +67,8 @@ export class DataGridComponent implements OnInit {
 
   onSelectRow(rec:any):void {
     this.selectRow.emit(rec);
+  }
+  onSelectRowForEdit(record:any):void{
+    this.selectRowForEdit.emit(record);
   }
 }
