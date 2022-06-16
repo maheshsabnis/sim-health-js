@@ -42,7 +42,7 @@ import { MainRoutingComponent } from './components/routingapp/app.mainrouting.co
   providers: [],
   // This component is loaded in Browser
   // by BrowserModule and will be rendered
-  bootstrap: [MainRoutingComponent]
+  bootstrap: [EmployeeComponent]
 })
 export class AppModule { }
 // since the AppModule is exported, it can be imported

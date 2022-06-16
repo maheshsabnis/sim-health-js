@@ -20,6 +20,7 @@ export class EmployeeComponent implements OnInit{
   departments = Departments;
   designations = Designations;
   passColor:string;
+  tax:number;
   constructor(){
     console.log('COnstructor is called');
     this.employee = new Employee(0,'','','',0);
@@ -32,6 +33,7 @@ export class EmployeeComponent implements OnInit{
     this.depts.push({DeptNo:30, DeptName:'SL'});
     this.depts.push({DeptNo:40, DeptName:'AC'});
     this.passColor = '';
+    this.tax = 0;
 
   }
   // invoked after the constructor completes its execution
@@ -47,7 +49,13 @@ export class EmployeeComponent implements OnInit{
   clear():void {
     this.employee = new Employee(0,'','','',0);
   }
+  add(x:number,y:number):number {
+    return x +y;
+  }
   save():void {
+    this.tax = this.employee.Salary * 0.02;
+    console.log('Hay BHau Method call zali bara ka..');
+
     this.employees = this.logic.addEmployee(this.employee);
   }
   getSelectedEmployee(emp:Employee):void {

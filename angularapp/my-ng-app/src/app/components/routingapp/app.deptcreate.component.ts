@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Department } from 'src/app/models/app.dept.model';
 import { DepartmentHttpService } from 'src/app/services/app.http.service';
-import {Router, TitleStrategy} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-deptcreate-component',

@@ -30,6 +30,7 @@
     <div class="form-group">
       <label>Salary</label>
       <input type="text" class="form-control" [(ngModel)]="employee.Salary">
+      <input type="text" class="form-control" [value]="tax" disabled>
     </div>
     <div class="form-group">
       <button class="btn btn-warning" (click)="clear()">Clear</button>
